@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
+
 import HomePage from "./HomePage";
-import JoinRoom from "./JoinRoom";
-import CreateRoom from "./CreateRoom";
 
 export default class App extends Component {
   constructor(props) {
@@ -11,8 +10,6 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <JoinRoom />
-        <CreateRoom />
         <HomePage />
       </div>
     );
