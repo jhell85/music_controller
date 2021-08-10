@@ -15,8 +15,9 @@ class CreateRoomView(APIView):
   serializer_class = CreateRoomSerializer
   def post(self, request, format=None):
     if not self.request.session.exists(self.request.session.session_key):
+      print('-------------------------------------------------------')
       self.request.session.create()
-    
+      print(request.data)
     serializer = self.serializer_class(data=request.data)
     if serializer.is_valid():
       guest_can_pause = serializer.data.get('guest_can_pause')
@@ -28,7 +29,7 @@ class CreateRoomView(APIView):
         room.guest_can_pause = guest_can_pause
         room.votes_to_skip = votes_to_skip
         room.save(update_fields=['guest_can_pause', 'votes_to_skip'])
-        return Response(RoomSerializer(room),data, status=status.HTTP_200_OK)
+        return Response(RoomSerializer(room).data, status=status.HTTP_200_OK)
       else: # the host doesn't have a room 
         room = Room(host=host, guest_can_pause=guest_can_pause, votes_to_skip=votes_to_skip)
         room.save()
