@@ -47,7 +47,7 @@ export default class CreateRoom extends Component {
     };
     fetch("/api/create-room", requestOptions)
       .then((response) => response.json())
-      .then((data) => this.props.history.push("room/" + data.code));
+      .then((data) => this.props.history.push("/room/" + data.code));
   }
 
   render() {
@@ -106,11 +106,11 @@ export default class CreateRoom extends Component {
           >
             Create A Room
           </Button>
-          <Grid item xs={12} align="center">
-            <Button color="secondary" variant="contained" to="/" component={Link}>
-              Back
-            </Button>
-          </Grid>
+        </Grid>
+        <Grid item xs={12} align="center">
+          <Button color="secondary" variant="contained" to="/" component={Link}>
+            Back
+          </Button>
         </Grid>
       </Grid>
     );
