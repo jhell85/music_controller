@@ -16,7 +16,7 @@ This app will let a host create a room where other guest can join. In the room i
 ### Installing
 
 - Clone this Repository to your desktop
-- CD into the repository and run
+- CD into the repository and make migrations for the backend
 
 ```
 cd music_controller
@@ -32,13 +32,13 @@ npm install
 
 ### Executing program
 
-- Move into the root folder and start the backend server
+- from the root folder start the backend server
 
 ```
 python manage.py runserver
 ```
 
-- In a new terminal from the root directory move into the client folder of the project and start the webpack development server
+- In a new terminal from the root folder move into the client folder of the project and start the webpack development server
 
 ```
 cd client
