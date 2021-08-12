@@ -19,6 +19,7 @@ export default class Room extends Component {
     fetch("/api/get-room" + "?code=" + this.roomCode)
       .then((response) => {
         if (!response.ok) {
+          // if the response to get the code is bad then the room must not be there remove the code from state and go back to /
           this.props.leaveRoomCallback();
           this.props.history.push("/");
         }
