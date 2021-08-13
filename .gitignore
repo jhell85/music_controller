@@ -10,3 +10,4 @@ api/__pycache__/serializers.cpython-39.pyc
 
 client/static/client/main.js.LICENSE.txt
 client/__pycache__/urls.cpython-39.pyc
+credentials.py
